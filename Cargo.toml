@@ -1,0 +1,31 @@
+[workspace]
+resolver = "2"
+default-members = ["app"]
+members = [
+    "app"
+]
+
+[workspace.package]
+version = "0.0.1"
+
+[workspace.dependencies]
+
+[profile.dev]
+opt-level = 0
+debug = true
+codegen-units = 16
+incremental = false
+panic = "abort"
+
+[profile.release]
+opt-level = "z"
+debug = false
+strip = true
+codegen-units = 1
+incremental = true
+panic = "abort"
+
+[workspace.metadata.scripts]
+run = "cargo run"
+build = "cargo build"
+release = "cargo build --release"

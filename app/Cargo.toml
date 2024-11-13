@@ -1,0 +1,13 @@
+cargo-features = ["different-binary-name"]
+
+[package]
+name = "app"
+version.workspace = true
+edition = "2021"
+
+[[bin]]
+name = "app"
+filename = "runebite.exe"
+path = "src/main.rs"
+
+[dependencies]
